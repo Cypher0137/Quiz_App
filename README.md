@@ -1,4 +1,5 @@
-#Quiz Application
+###Quiz Application
+
 Quiz Application is a web-based quiz platform built with React.js for the frontend and Node.js for the backend. The application fetches quiz questions from the Open Trivia Database API, presents them to the user, and provides a timer for each quiz session.
 
 #Features
