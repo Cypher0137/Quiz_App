@@ -1,0 +1,79 @@
+
+
+/* src/components/Quiz.css */
+/* ... (existing styles) */
+
+.quizContainer {
+  display: flex;
+  height: 600px;
+  width: 1200px;
+}
+
+.quizComponent {
+  flex: 3; 
+
+}
+
+.questionPanel {
+  flex: 1; 
+  margin-top: -5px;
+  margin-left: 100px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+
+.questionPanel h3 {
+  color: #000000;
+  margin-bottom:5px;
+}
+
+.questionPanel ul {
+  padding: 0;
+}
+
+.questionPanel li {
+  cursor: pointer;
+  padding: 6px;
+  margin-bottom: 4px;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  transition: background-color 0.3s ease; /* Smooth transition */
+  list-style-type: none; /* Remove the default list-style */
+}
+
+.questionPanel li:hover {
+  background-color: #26afce;
+}
+
+.questionPanelItem {
+  cursor: pointer;
+  padding: 8px;
+  margin-bottom: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  list-style-type: none; 
+}
+
+.answered {
+  background-color: green;
+}
+
+.not-attempted {
+  background-color: rgb(205, 23, 23);
+}
+
+.optionsList {
+  list-style-type: none; 
+}
+
+.button{
+  margin-top: 250px;
+}
+
+.report{
+  margin-top: 1200px;
+}
+.reportli{
+  list-style-type: none;
+}

@@ -1,23 +1,43 @@
-import logo from './logo.svg';
+// src/App.js
+import React, { useState } from 'react';
+import Quiz from './components/Quiz';
 import './App.css';
 
 function App() {
+  const [email, setEmail] = useState('');
+  const [quizStarted, setQuizStarted] = useState(false);
+
+  const startQuiz = () => {
+    if (isValidEmail(email)) {
+      setQuizStarted(true);
+    } else {
+      alert('Please enter a valid email address.');
+    }
+  };
+
+  const isValidEmail = (email) => {
+    // Simple email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!quizStarted ? (
+        <div className='login'>
+          <h1>Quiz Application</h1>
+          <label>Email: </label>
+          <input
+            type="email"
+            value={email}
+            placeholder='Enter Your Email'
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <button className="startbutton" onClick={startQuiz}>Start Quiz</button>
+        </div>
+      ) : (
+        <Quiz />
+      )}
     </div>
   );
 }
