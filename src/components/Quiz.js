@@ -14,8 +14,9 @@ const Quiz = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch('/api/questions');
+        const response = await fetch('https://quiz-backend-nodejs.vercel.app/api/questions');
         const data = await response.json();
+        console.log(data);
         setQuestions(data);
         setLoading(false);
       } catch (error) {
